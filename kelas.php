@@ -10,7 +10,7 @@ class Siswa extends Database {
     // Menambah Data
     public function create($nama, $alamat, $tgl_lahir, $jns_kelamin, $agama, $umur)
     {
-        mysqli_query($this->koneksi,"insert into siswa values('','$nama', '$alamat','$tgl_lahir','$jns_kelamin','$agama','$umur')");
+        mysqli_query($this->koneksi,"insert into siswa values(null,'$nama', '$alamat','$tgl_lahir','$jns_kelamin','$agama','$umur')");
     }
     // Menampilkan Data Berdasarkan ID
     public function show($id)

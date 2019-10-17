@@ -1,71 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Latihan CRUD - Create Data</title>
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <title>Create Biodata</title>
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Nanda</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="proses.php">Formulir</a>
-      </li>
-      </li>
-    </ul>
+<body><br><br>
+<center>I N P U T</center>
+<center>B I O D A T A</center><br>
+<div class="container">
+  <div class="row" style="padding: 20px;">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header"><b></b>
+          <div class="card-body">
+            
+            <form action="proses.php?aksi=tambah" method="POST">
+              <div class="form-group">
+                <label for="">Nama :</label>
+                  <input type="text" class="form-control" name="nama">
+              </div>
+              <div class="form-group">
+                <label for="">Alamat :</label>
+                  <textarea class="form-control" name="alamat" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="">Tanggal Lahir :</label>
+                  <input type="date" class="form-control" name="tanggal_lahir">
+              </div>
+              <div class="form-group">
+                <label for="">Jenis Kelamin :</label><br>
+                  <input type="radio" name="jeniskelamin" value="Laki-Laki">Laki-Laki<br>
+                  <input type="radio" name="jeniskelamin" value="Perempuan">Perempuan
+              </div>
+              <div class="form-group">
+                <label for="">Agama :</label><br>
+                  <select name="agama" class="form-control">
+                    <option>P I L I H</option>
+                    <option>- Islam</option>
+                    <option>- Kristen</option>
+                    <option>- Hindu</option>
+                    <option>- Budha</option>
+                    <option>- Katolik</option>
+                  </select>
+              </div><br>
+              <div class="form-group">
+                <button type="submit" name="save" class="btn btn-primary">SIMPAN</button>
+              </div>
+            </form>
+          </div>  
+        </div>
+      </div>
+    </div>
   </div>
-</nav>
-    <fieldset>
-        <legend>Input Data Siswa</legend>
-            <table>
-                <tr>
-                    <th>Nama Siswa</th>
-                    <td><input type="text" name="nama" required></td>
-                </tr>
-                <tr>
-                    <th>Alamat</th>
-                    <td><textarea name="alamat" cols="40" required></textarea></td>
-                </tr>
-                <tr>
-                <td>Tanggal Lahir</td>
-                <td><input type="Date"></td>
-                </tr>
-                <tr>
-                <td>Jenis Kelamin</td>
-                <td><input type="radio"/>Laki-Laki
-                <input type="radio"/>Perempuan</td>
-                </tr>
-                <tr>
-                <td valign="top">Agama</td>
-               <td>        
-                <select name="agamaid" class="required" title="harus diisi">
-                <option value="">- Pilih Agama -</option>
-                <option value="islam">ISLAM</option></option>
-                <option value="kristen">KRISTEN</option>
-                <option value="budha">BUDHA</option>
-                </td>
-                </tr>
-                <tr>
-                <th>Umur</th>
-                <td><input type="number" name="umur" required></td>
-                </tr>
-                <tr>
-                    <th><input type="submit" name="save" value="Simpan"></th>
-                </tr>
-            </table>
-        </form>
-    </fieldset>
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/bootstrap.bundle.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</div>
 </body>
 </html>

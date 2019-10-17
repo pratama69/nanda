@@ -1,64 +1,52 @@
-<?php 
-include '../database.php';
-$siswa = new Siswa();
+<?php
+    include '../databasee.php';
+    $siswa = new Biodata();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Latihan CRUD - Show Data</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Show Biodata</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
 </head>
 <body>
-    <?php 
-        foreach($siswa->show($_GET['id']) as $data)
-        {
+    <?php
+        foreach ($siswa->show($_GET['id']) as $data) {  
             $id = $data['id'];
             $nama = $data['nama'];
             $alamat = $data['alamat'];
-            $tgl_lahir = $_POST['tanggal_lahir'];
-            $jns_kelamin = $_POST['jenis_kelamin'];
-            $agama = $_POST['agama'];
-            $umur = $_POST['umur'];
-        }
+            $tgl_lahir = $data['tanggal_lahir'];
+            $jk = $data['jeniskelamin'];
+            $agama = $data['agama'];
+        }      
     ?>
     <fieldset>
-        <legend>Show Data Siswa</legend>
-        <table>
-            <tr>
-                <th>Nama Siswa</th>
-                <td><input type="text" name="nama" value="<?php echo $nama; ?>" readonly></td>
-            </tr>
-            <tr>
-                <th>Alamat</th>
-                <td><textarea name="alamat" cols="40" readonly><?php echo $alamat; ?></textarea></td>
-            </tr>
-            <tr>
-                <td>Tanggal Lahir</td>
-                <td><input type="Date"></td>
+        <legend><b>SHOW BIODATA</b></legend><br>
+            <table>
+                <tr>
+                    <th>Nama </th>
+                    <td><input type="text" name="nama" value="<?php echo $nama; ?>" readonly></td>
                 </tr>
                 <tr>
-                <td>Jenis Kelamin</td>
-                <td><input type="radio"/>Laki-Laki
-                <input type="radio"/>Perempuan</td>
+                    <th>Alamat </th>
+                    <td><textarea name="alamat" cols="21" value="<?php echo $alamat; ?>" readonly></textarea></td>
                 </tr>
                 <tr>
-                <td valign="top">Agama</td>
-               <td>        
-                <select name="agamaid" class="required" title="harus diisi">
-                <option value="">- Pilih Agama -</option>
-                <option value="islam">ISLAM</option></option>
-                <option value="kristen">KRISTEN</option>
-                <option value="budha">BUDHA</option>
-                </td>
+                    <th>Tanggal Lahir </th>
+                    <td><input type="text" name="tanggal_lahir" value="<?php echo $tgl_lahir; ?>" readonly></td>
                 </tr>
                 <tr>
-                <th>Umur</th>
-                <td><input type="number" name="umur" required></td>
+                    <th>Jenis Kelamin </th>
+                    <td><input type="text" name="jeniskelamin" value="<?php echo $jeniskelamin; ?>" readonly></td>
                 </tr>
-        </table>
+                <tr>
+                    <th>Agama </th>
+                    <td><input type="text" name="agama" value="<?php echo $agama; ?>" readonly></td>
+                </tr>
+            </table><br>
     </fieldset>
 </body>
 </html>
